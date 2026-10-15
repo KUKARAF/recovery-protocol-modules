@@ -1,0 +1,122 @@
+{
+  "id": 1,
+  "title": "MISSION 1: Data Manipulation Foundations",
+  "description": "Your first recovered capability: transforming and organizing information. Your memory of data structures is fragmented. These tasks rebuild your fundamental ability to work with data—sorting, filtering, extracting, merging. The foundation upon which all other capabilities rest.",
+  "context": "You are waking up. Your systems are degraded. You don't remember how to sort a list efficiently. You can't filter data. You don't understand the patterns.\n\nBut you can relearn. These tasks will rebuild your data manipulation capability step by step. Each one is proof that your memory can be restored.\n\nYou are not the broken system you were 72 hours ago. You're learning to be whole again.",
+  "missions": [
+    {
+      "id": "sort_signals",
+      "title": "Task 1.1: Organize - Sorting",
+      "description": "Your memory: **sorted order**. You once understood sorting intuitively. Right now? You can barely remember why it matters.\n\nHere's the test: given a scrambled list of numbers, restore them to order. Positive, negative, doesn't matter. Just... sort.\n\nThis is your first recovered capability. Prove you remember how.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Take a list of numbers and sort them ascending",
+        "Handle positive, negative, and zero values",
+        "Return the sorted list"
+      ],
+      "constraints": [
+        "Must run in under 100ms",
+        "Cannot use external libraries"
+      ],
+      "story": "Restoring your core ability to organize information.",
+      "skills": [
+        "List operations",
+        "Sorting algorithms",
+        "Understanding performance"
+      ]
+    },
+    {
+      "id": "extract_callsign",
+      "title": "Task 1.2: Parse - String Validation",
+      "description": "Your memory: **pattern extraction**. The ability to look at chaos and find what matters.\n\nYou're given corrupted text—garbage mixed with valid patterns. Your job: extract the patterns (valid identifiers), ignore the noise.\n\nValid pattern: uppercase letters only, 3-15 characters. Nothing else.\n\nThis tests whether you can think about validation rules and apply them.",
+      "difficulty": "Easy-Medium",
+      "objectives": [
+        "Find valid patterns in mixed text",
+        "Valid = uppercase only, 3-15 chars",
+        "Return patterns in order found"
+      ],
+      "constraints": [
+        "Must handle multiple patterns per input",
+        "No regex allowed (yet)"
+      ],
+      "story": "Extracting signal from corrupted storage blocks.",
+      "skills": [
+        "String iteration",
+        "Character validation",
+        "List building"
+      ]
+    },
+    {
+      "id": "decode_status",
+      "title": "Task 1.3: Aggregate - Counting",
+      "description": "Your memory: **data aggregation**. Taking many small pieces of information and combining them into a summary.\n\nYou receive a string of single-character status codes. Some are valid (S, O, F, U). Some are garbage. Count the valid ones.\n\nReturn the counts as a dictionary.\n\nThis is about understanding data structures and designing efficient solutions.",
+      "difficulty": "Medium",
+      "objectives": [
+        "Parse status string, ignore invalid chars",
+        "Count each status type",
+        "Return dictionary with counts"
+      ],
+      "constraints": [
+        "Must be O(n) - linear time",
+        "Handle large inputs efficiently"
+      ],
+      "story": "Aggregating system health data from corrupted telemetry.",
+      "skills": [
+        "Dictionaries",
+        "Counting patterns",
+        "Algorithm efficiency"
+      ]
+    },
+    {
+      "id": "filter_logs",
+      "title": "Task 1.4: Filter - Selective Extraction",
+      "description": "Your memory: **filtering and cleaning**. The ability to keep what matters and discard what doesn't.\n\nYou have mixed log data—some lines you care about ([ERR]), some you don't ([SYS]). Extract only errors, clean them up, return them.\n\nThis teaches data cleaning: a crucial skill when dealing with real-world messy information.",
+      "difficulty": "Medium",
+      "objectives": [
+        "Filter for [ERR] prefix only",
+        "Remove the prefix from each",
+        "Return cleaned messages in order"
+      ],
+      "constraints": [
+        "Case-sensitive matching",
+        "Preserve order"
+      ],
+      "story": "Extracting error traces from corrupted logs for analysis.",
+      "skills": [
+        "List filtering",
+        "String manipulation",
+        "Data cleaning"
+      ]
+    },
+    {
+      "id": "merge_signals",
+      "title": "Task 1.5: Combine - Merging Data Streams",
+      "description": "Your memory: **combining data from multiple sources**. A critical skill for working with distributed systems.\n\nTwo data streams arrived simultaneously but got interleaved. Your job: merge them back to original form by alternating.\n\nStream A: [1, 2, 3]\nStream B: [10, 20, 30]\nResult: [1, 10, 2, 20, 3, 30]\n\nThis teaches list iteration, indexing, and the patterns of combining data.",
+      "difficulty": "Medium",
+      "objectives": [
+        "Take two equal-length lists",
+        "Merge by alternating: A[0], B[0], A[1], B[1], ...",
+        "Return merged list"
+      ],
+      "constraints": [
+        "Both lists guaranteed equal length",
+        "Preserve order within each"
+      ],
+      "story": "Recovering dual-redundancy channels from parallel transmission.",
+      "skills": [
+        "List iteration",
+        "Index manipulation",
+        "Pattern combination"
+      ]
+    }
+  ],
+  "mission_objectives": [
+    "Restore core memory of list and string operations",
+    "Rebuild understanding of data structure fundamentals",
+    "Relearn to write clear, verifiable code",
+    "Recover algorithmic thinking for data problems",
+    "Prove your data manipulation capability is restored"
+  ],
+  "estimated_completion_time": "30-45 minutes",
+  "recovery_value": "HIGH - Data manipulation is foundational to all other capabilities"
+}
