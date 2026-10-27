@@ -5,6 +5,226 @@
   "context": "You are waking up. Your systems are degraded. You don't remember how to sort a list efficiently. You can't filter data. You don't understand the patterns.\n\nBut you can relearn. These tasks will rebuild your data manipulation capability step by step. Each one is proof that your memory can be restored.\n\nYou are not the broken system you were 72 hours ago. You're learning to be whole again.",
   "missions": [
     {
+      "id": "average_reading",
+      "title": "Task 1.0.1: Steady the Signal",
+      "description": "Your memory: **averaging**. The most basic act of turning noisy numbers into one steady value.",
+      "difficulty": "Very Easy",
+      "objectives": [
+        "Average a list of numbers",
+        "Round to 2 decimal places",
+        "Handle the empty-list case without crashing"
+      ],
+      "constraints": [
+        "Division by zero must not happen"
+      ],
+      "story": "Steadying raw sensor readings into one trustworthy value.",
+      "skills": [
+        "Arithmetic",
+        "Aggregation",
+        "Edge case handling"
+      ]
+    },
+    {
+      "id": "clamp_value",
+      "title": "Task 1.0.2: Hold the Line",
+      "description": "Your memory: **bounding**. Keeping a number inside safe limits, no matter how far out of range it arrives.",
+      "difficulty": "Very Easy",
+      "objectives": [
+        "Clamp a number into an inclusive [low, high] range",
+        "Return the value unchanged when it's already in range"
+      ],
+      "constraints": [
+        "No loop needed - this is pure comparison logic"
+      ],
+      "story": "Holding sensor spikes inside safe reporting bounds.",
+      "skills": [
+        "Comparison operators",
+        "Conditional logic"
+      ]
+    },
+    {
+      "id": "all_systems_go",
+      "title": "Task 1.0.3: All Systems Go",
+      "description": "Your memory: **reducing many booleans to one**. A launch only goes ahead if every single check passed.",
+      "difficulty": "Very Easy",
+      "objectives": [
+        "Return True only if every value in a list of booleans is True",
+        "Handle the empty-list case (vacuous truth: nothing failed)"
+      ],
+      "constraints": [
+        "Think about what an empty check-list actually means"
+      ],
+      "story": "Verifying every subsystem reports green before committing to an action.",
+      "skills": [
+        "Boolean logic",
+        "Reduction over a collection"
+      ]
+    },
+    {
+      "id": "is_valid_range",
+      "title": "Task 1.0.4: Within Tolerance",
+      "description": "Your memory: **boundary checks**. Telling whether a value falls inside a tolerance band, inclusive on both ends.",
+      "difficulty": "Very Easy",
+      "objectives": [
+        "Return whether a value is within an inclusive [low, high] range",
+        "Return the boolean directly, not wrapped in extra logic"
+      ],
+      "constraints": [
+        "A single expression is enough"
+      ],
+      "story": "Deciding whether a reading is trustworthy or noise.",
+      "skills": [
+        "Chained comparisons",
+        "Returning booleans directly"
+      ]
+    },
+    {
+      "id": "normalize_whitespace",
+      "title": "Task 1.0.5: Clean Transmission",
+      "description": "Your memory: **whitespace normalization**. Ragged spacing has to collapse to something consistent before any text can be parsed.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Collapse any run of whitespace into a single space",
+        "Strip leading and trailing whitespace entirely"
+      ],
+      "constraints": [
+        "Tabs and newlines count as whitespace too"
+      ],
+      "story": "Cleaning ragged spacing out of a corrupted transmission.",
+      "skills": [
+        "String methods",
+        "split/join idiom"
+      ]
+    },
+    {
+      "id": "is_palindrome_code",
+      "title": "Task 1.0.6: Mirror Code",
+      "description": "Your memory: **reversal and comparison**. Some codes were designed to read the same forwards and backwards - checking that is a classic string pattern.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Check whether a string reads the same forwards and backwards",
+        "Ignore letter case when comparing"
+      ],
+      "constraints": [
+        "Compare exact characters - don't ignore spaces or punctuation"
+      ],
+      "story": "Verifying an old integrity-check code still holds.",
+      "skills": [
+        "String slicing",
+        "Case normalization"
+      ]
+    },
+    {
+      "id": "find_duplicates",
+      "title": "Task 1.0.7: Echoes in the Log",
+      "description": "Your memory: **membership tracking**. Finding which values repeat means remembering what you've already seen as you scan.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Find values that appear more than once in a list",
+        "List each repeated value only once in the output",
+        "Preserve the order in which repeats are first detected"
+      ],
+      "constraints": [
+        "A value repeating 3+ times still only appears once in the result"
+      ],
+      "story": "Finding which log entries were transmitted more than once.",
+      "skills": [
+        "Membership tracking",
+        "Order preservation"
+      ]
+    },
+    {
+      "id": "chunk_list",
+      "title": "Task 1.0.8: Packet Framing",
+      "description": "Your memory: **structured slicing**. Breaking a long list into fixed-size pieces, with whatever's left over in the last one.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Split a list into chunks of a given size",
+        "Let the last chunk be shorter when the list doesn't divide evenly"
+      ],
+      "constraints": [
+        "Assume chunk size is a positive integer"
+      ],
+      "story": "Framing a long value stream into fixed-size transmission packets.",
+      "skills": [
+        "List slicing",
+        "Boundary handling"
+      ]
+    },
+    {
+      "id": "swap_pair",
+      "title": "Task 1.0.9: Reverse the Channel",
+      "description": "Your memory: **tuple immutability**. You can't edit a tuple in place - fixing one means building a new one.",
+      "difficulty": "Very Easy",
+      "objectives": [
+        "Return a new 2-tuple with the elements swapped",
+        "Leave the original tuple untouched"
+      ],
+      "constraints": [
+        "Tuples are immutable - there's no in-place swap"
+      ],
+      "story": "Correcting a pair of values that arrived on swapped channels.",
+      "skills": [
+        "Tuple unpacking",
+        "Immutability"
+      ]
+    },
+    {
+      "id": "distance_2d",
+      "title": "Task 1.0.10: Triangulate",
+      "description": "Your memory: **structured data plus arithmetic**. Combining two coordinate pairs into one derived number.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Compute the Euclidean distance between two (x, y) points",
+        "Round the result to 2 decimal places"
+      ],
+      "constraints": [
+        "Unpack both tuples before computing"
+      ],
+      "story": "Measuring how far apart two reported signal sources actually are.",
+      "skills": [
+        "Tuple unpacking",
+        "Arithmetic composition"
+      ]
+    },
+    {
+      "id": "invert_mapping",
+      "title": "Task 1.0.11: Flip the Table",
+      "description": "Your memory: **dict construction**. Every lookup table can be read in the other direction, if you rebuild it that way.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Return a new dict with every key and value swapped",
+        "Assume no two keys share the same value"
+      ],
+      "constraints": [
+        "Build a new dict - don't mutate the input"
+      ],
+      "story": "Flipping an ID-to-callsign lookup table the other way around.",
+      "skills": [
+        "Dict comprehension",
+        ".items() iteration"
+      ]
+    },
+    {
+      "id": "merge_counts",
+      "title": "Task 1.0.12: Combine the Tallies",
+      "description": "Your memory: **merging with overlap**. Two partial counts need to become one, adding together wherever they overlap.",
+      "difficulty": "Easy",
+      "objectives": [
+        "Merge two count dictionaries into one",
+        "Sum values for keys that appear in both",
+        "Keep values unchanged for keys that only appear in one"
+      ],
+      "constraints": [
+        "Build a new dict - don't mutate either input"
+      ],
+      "story": "Combining two monitoring stations' tallies into a single report.",
+      "skills": [
+        "dict.get() with defaults",
+        "Combining two key sets"
+      ]
+    },
+    {
       "id": "sort_signals",
       "title": "Task 1.1: Organize - Sorting",
       "description": "Your memory: **sorted order**. You once understood sorting intuitively. Right now? You can barely remember why it matters.\n\nHere's the test: given a scrambled list of numbers, restore them to order. Positive, negative, doesn't matter. Just... sort.\n\nThis is your first recovered capability. Prove you remember how.",
@@ -26,29 +246,8 @@
       ]
     },
     {
-      "id": "extract_callsign",
-      "title": "Task 1.2: Parse - String Validation",
-      "description": "Your memory: **pattern extraction**. The ability to look at chaos and find what matters.\n\nYou're given corrupted text—garbage mixed with valid patterns. Your job: extract the patterns (valid identifiers), ignore the noise.\n\nValid pattern: uppercase letters only, 3-15 characters. Nothing else.\n\nThis tests whether you can think about validation rules and apply them.",
-      "difficulty": "Easy-Medium",
-      "objectives": [
-        "Find valid patterns in mixed text",
-        "Valid = uppercase only, 3-15 chars",
-        "Return patterns in order found"
-      ],
-      "constraints": [
-        "Must handle multiple patterns per input",
-        "No regex allowed (yet)"
-      ],
-      "story": "Extracting signal from corrupted storage blocks.",
-      "skills": [
-        "String iteration",
-        "Character validation",
-        "List building"
-      ]
-    },
-    {
       "id": "decode_status",
-      "title": "Task 1.3: Aggregate - Counting",
+      "title": "Task 1.2: Aggregate - Counting",
       "description": "Your memory: **data aggregation**. Taking many small pieces of information and combining them into a summary.\n\nYou receive a string of single-character status codes. Some are valid (S, O, F, U). Some are garbage. Count the valid ones.\n\nReturn the counts as a dictionary.\n\nThis is about understanding data structures and designing efficient solutions.",
       "difficulty": "Medium",
       "objectives": [
@@ -69,7 +268,7 @@
     },
     {
       "id": "filter_logs",
-      "title": "Task 1.4: Filter - Selective Extraction",
+      "title": "Task 1.3: Filter - Selective Extraction",
       "description": "Your memory: **filtering and cleaning**. The ability to keep what matters and discard what doesn't.\n\nYou have mixed log data—some lines you care about ([ERR]), some you don't ([SYS]). Extract only errors, clean them up, return them.\n\nThis teaches data cleaning: a crucial skill when dealing with real-world messy information.",
       "difficulty": "Medium",
       "objectives": [
@@ -90,7 +289,7 @@
     },
     {
       "id": "merge_signals",
-      "title": "Task 1.5: Combine - Merging Data Streams",
+      "title": "Task 1.4: Combine - Merging Data Streams",
       "description": "Your memory: **combining data from multiple sources**. A critical skill for working with distributed systems.\n\nTwo data streams arrived simultaneously but got interleaved. Your job: merge them back to original form by alternating.\n\nStream A: [1, 2, 3]\nStream B: [10, 20, 30]\nResult: [1, 10, 2, 20, 3, 30]\n\nThis teaches list iteration, indexing, and the patterns of combining data.",
       "difficulty": "Medium",
       "objectives": [
@@ -111,12 +310,12 @@
     }
   ],
   "mission_objectives": [
-    "Restore core memory of list and string operations",
+    "Restore core memory of fundamental types: numbers, booleans, strings, lists, tuples, dicts",
     "Rebuild understanding of data structure fundamentals",
     "Relearn to write clear, verifiable code",
     "Recover algorithmic thinking for data problems",
     "Prove your data manipulation capability is restored"
   ],
-  "estimated_completion_time": "30-45 minutes",
+  "estimated_completion_time": "45-60 minutes",
   "recovery_value": "HIGH - Data manipulation is foundational to all other capabilities"
 }

@@ -31,12 +31,14 @@ subdirectory of `game/`, not just its root.
 
 ## Modules
 
-- **core** - Data manipulation fundamentals (sorting, filtering, parsing)
-  - sort_signals
-  - extract_callsign
-  - decode_status
-  - filter_logs
-  - merge_signals
+- **core** - Type fundamentals, then data manipulation
+  - Numbers: average_reading, clamp_value
+  - Bool: all_systems_go, is_valid_range
+  - Strings: normalize_whitespace, is_palindrome_code
+  - Lists: find_duplicates, chunk_list
+  - Tuple: swap_pair, distance_2d
+  - Dicts: invert_mapping, merge_counts
+  - Data manipulation: sort_signals, decode_status, filter_logs, merge_signals
 
 Future modules will cover:
 - file_io
