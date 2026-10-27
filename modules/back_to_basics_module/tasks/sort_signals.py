@@ -37,4 +37,6 @@ def sort_signals(packets: list) -> list:
     Time Complexity: O(n log n) expected
     Space Complexity: O(n)
     """
-    return sorted(packets)
+    # TODO: Implement this function
+    # Hint: Python's built-in sort is allowed (sorted() or list.sort())
+    pass
