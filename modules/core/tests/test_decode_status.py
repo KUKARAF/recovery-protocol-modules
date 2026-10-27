@@ -1,7 +1,7 @@
 """Tests for Challenge 1.3: Decode System Status"""
 
 import pytest
-from modules.back_to_basics_module.tasks.decode_status import decode_status
+from modules.core.tasks.decode_status import decode_status
 
 
 class TestDecodeStatus:

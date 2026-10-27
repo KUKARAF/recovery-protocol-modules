@@ -6,7 +6,7 @@ Learning modules for the Recovery Protocol system recovery game.
 
 ```
 modules/
-└── back_to_basics_module/
+└── core/
     ├── tasks/           (Edit these to solve challenges)
     ├── tests/           (These verify your solutions)
     └── metadata.json    (Module definition)
@@ -14,26 +14,24 @@ modules/
 
 ## Usage
 
-Clone this alongside recovery-protocol-framework:
+Clone this alongside recovery-protocol-framework, as your game folder's
+`modules/` directory:
 
 ```bash
 git clone <framework-repo> recovery-framework
-git clone <modules-repo> recovery-modules
-cd recovery-framework
-uv sync
+git clone <modules-repo> game/modules
+cd recovery-framework && uv sync
+cd ../game
+../recovery-framework/.venv/bin/recovery
 ```
 
-Then from your game folder:
-
-```bash
-../recovery-framework/.venv/bin/python -m pytest recovery-modules/modules/back_to_basics_module/tests/
-```
-
-Or use the validation script in your game folder.
+`recovery` with no flags finds the first task that isn't passing yet and
+checks it - nothing to remember or type. It also works from inside any
+subdirectory of `game/`, not just its root.
 
 ## Modules
 
-- **back_to_basics_module** - Data manipulation fundamentals (sorting, filtering, parsing)
+- **core** - Data manipulation fundamentals (sorting, filtering, parsing)
   - sort_signals
   - extract_callsign
   - decode_status
@@ -41,7 +39,14 @@ Or use the validation script in your game folder.
   - merge_signals
 
 Future modules will cover:
-- file_io_module
-- data_structures_module
-- algorithms_module
-- concurrency_module
+- file_io
+- data_structures
+- algorithms
+- concurrency
+
+## CI
+
+`.github/workflows/stub-integrity.yml` is a reversed check: every task
+ships as an unsolved stub, so its tests are *expected* to fail. The job
+goes red only if a task's tests pass against the shipped file - meaning a
+solution leaked in instead of a stub.

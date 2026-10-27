@@ -2,7 +2,7 @@
 
 import pytest
 import time
-from modules.back_to_basics_module.tasks.sort_signals import sort_signals
+from modules.core.tasks.sort_signals import sort_signals
 
 
 class TestSortSignals:

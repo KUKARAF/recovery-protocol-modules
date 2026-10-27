@@ -1,7 +1,7 @@
 """Tests for Challenge 1.5: Merge Data Streams"""
 
 import pytest
-from modules.back_to_basics_module.tasks.merge_signals import merge_signals
+from modules.core.tasks.merge_signals import merge_signals
 
 
 class TestMergeSignals:

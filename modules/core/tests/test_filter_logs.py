@@ -1,7 +1,7 @@
 """Tests for Challenge 1.4: Filter the Noise"""
 
 import pytest
-from modules.back_to_basics_module.tasks.filter_logs import filter_logs
+from modules.core.tasks.filter_logs import filter_logs
 
 
 class TestFilterLogs:

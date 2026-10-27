@@ -1,7 +1,7 @@
 """Tests for Challenge 1.2: Extract the Signal"""
 
 import pytest
-from modules.back_to_basics_module.tasks.extract_callsign import extract_callsign
+from modules.core.tasks.extract_callsign import extract_callsign
 
 
 class TestExtractCallsign:
