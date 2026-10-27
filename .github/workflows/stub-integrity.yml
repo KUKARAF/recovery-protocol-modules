@@ -1,0 +1,56 @@
+name: Stub Integrity Check
+
+# This check is inverted on purpose. Every task file ships as an unsolved
+# stub (`pass`), so running its tests against the shipped file is EXPECTED
+# to fail. This job passes when that's true for every task, and fails the
+# moment any single task's test suite passes unmodified - that means a
+# reference solution leaked into the task file instead of a stub.
+#
+# Each task's tests run in isolation rather than as one combined pytest
+# invocation. A combined run can still exit non-zero (looking "fine")
+# while one specific task is fully solved, because other unsolved tasks'
+# failures mask it - exactly what happened when sort_signals.py shipped
+# with `return sorted(packets)` already in place instead of `pass`.
+#
+# This does not check whether the game works - `recovery validate` and
+# the framework's own test suite cover that. It only guards against
+# shipping the answer.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  no-leaked-solutions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install pytest
+
+      - name: Verify every task ships unsolved
+        run: |
+          set +e
+          leaked=0
+          while IFS= read -r test_file; do
+            if pytest "$test_file" -q > /tmp/out.txt 2>&1; then
+              echo "::error file=$test_file::All tests passed against the shipped file - a solution leaked into this task"
+              cat /tmp/out.txt
+              leaked=1
+            else
+              echo "OK: $test_file fails as expected (task is still an unsolved stub)"
+            fi
+          done < <(find modules -path '*/tests/test_*.py' | sort)
+
+          if [ "$leaked" -ne 0 ]; then
+            echo
+            echo "One or more tasks shipped already solved. Replace the solution with"
+            echo "a stub (TODO comment + pass) before merging."
+          fi
+
+          exit $leaked
